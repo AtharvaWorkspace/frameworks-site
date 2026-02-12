@@ -3,23 +3,22 @@
 import React, { useEffect, useState } from 'react'
 
 /*
-  🚀 FRAMEWORKS — FLAGSHIP PERFORMANCE EDITION
+  🚀 FRAMEWORKS — FLAGSHIP SCROLL FIXED VERSION
 
-  Optimized For:
-  - Mobile-first performance
-  - Desktop elegance
-  - Reduced GPU-heavy blur
-  - Motion reduced on low-power devices
-  - Accessible navigation (hamburger)
-  - Clean responsive spacing
-  - No unnecessary heavy animations
-  - Smooth but efficient gradient motion
+  Fixes Applied:
+  - Restored natural scrolling
+  - Added smooth scroll behavior
+  - Prevented scroll locking issues
+  - Fixed mobile overlay scroll behavior
+  - Ensured no layout scroll blocking
 */
 
 export default function FrameworksWebsite() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const elements = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,14 +28,15 @@ export default function FrameworksWebsite() {
       },
       { threshold: 0.12 }
     )
+
     elements.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#0B0B0F] text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0B0B0F] text-white">
 
-      {/* Lightweight Animated Gradient */}
+      {/* Gradient Background */}
       <div className="absolute inset-0 -z-20 gradient-bg" />
 
       {/* Subtle Noise */}
@@ -53,7 +53,6 @@ export default function FrameworksWebsite() {
             </div>
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex gap-8 text-sm text-white/70 items-center">
             <a href="#services" className="hover:text-white transition">Services</a>
             <a href="#cases" className="hover:text-white transition">Work</a>
@@ -61,7 +60,6 @@ export default function FrameworksWebsite() {
             <a href="#contact" className="bg-white text-black px-5 py-2 rounded-full font-medium hover:opacity-90 transition">Contact</a>
           </div>
 
-          {/* Mobile Hamburger */}
           <button
             className="md:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -153,8 +151,9 @@ export default function FrameworksWebsite() {
         </footer>
       </div>
 
-      {/* Styles */}
       <style jsx global>{`
+        html { scroll-behavior: smooth; }
+
         .gradient-bg {
           background: radial-gradient(circle at 20% 20%, #6366f1, transparent 45%),
                       radial-gradient(circle at 80% 30%, #8b5cf6, transparent 45%);
