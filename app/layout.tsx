@@ -12,9 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Frameworks",
-  description: "Frameworks - Think.Execute.Deliver",
+export const metadata = {
+  title: {
+    default: "Frameworks",
+    template: "%s | Frameworks",
+  },
+  description:
+    "Frameworks is a premium consulting studio specializing in product strategy, business analysis, and structured execution.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
