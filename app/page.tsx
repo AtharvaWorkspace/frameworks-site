@@ -35,7 +35,7 @@ export default function FrameworksWebsite() {
           <div className="text-lg font-semibold tracking-tight">
             Frameworks
             <div className="text-[10px] tracking-[0.3em] text-white/50 mt-1">
-              think • execute • deliver
+              THINK • EXECUTE • DELIVER
             </div>
           </div>
 
