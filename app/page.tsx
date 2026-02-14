@@ -42,8 +42,6 @@ export default function FrameworksWebsite() {
           <div className="hidden md:flex gap-8 text-sm text-white/70 items-center">
             <a href="#pillars" className="hover:text-white transition">Pillars</a>
             <a href="#content" className="hover:text-white transition">Content</a>
-            <a href="#frameworks" className="hover:text-white transition">Frameworks</a>
-            <a href="#advisory" className="bg-white text-black px-5 py-2 rounded-full font-medium hover:opacity-90 transition">Advisory</a>
           </div>
 
           <button
@@ -58,8 +56,6 @@ export default function FrameworksWebsite() {
           <div className="fixed inset-0 bg-black/95 flex flex-col items-center justify-center space-y-8 text-xl z-40 md:hidden">
             <a href="#pillars" onClick={() => setMenuOpen(false)}>Pillars</a>
             <a href="#content" onClick={() => setMenuOpen(false)}>Content</a>
-            <a href="#frameworks" onClick={() => setMenuOpen(false)}>Frameworks</a>
-            <a href="#advisory" onClick={() => setMenuOpen(false)}>Advisory</a>
           </div>
         )}
 
@@ -116,7 +112,7 @@ export default function FrameworksWebsite() {
           <div className="mt-16 space-y-10">
             {[
               'Explainers — Deep authority-building analysis',
-              'Strategic Breakdowns — Power & competitive dynamics',
+              'Strategic Breakdowns — Competitive & power dynamics',
               'Tactical Applications — AI for SMEs & founders',
               'Decision Frameworks — Proprietary intellectual models'
             ].map((item, i) => (
@@ -124,48 +120,6 @@ export default function FrameworksWebsite() {
                 <p className="text-white/70">{item}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* SIGNATURE FRAMEWORKS */}
-        <section id="frameworks" className="py-24 border-t border-white/10 reveal">
-          <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight">
-            Signature Frameworks (In Development)
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
-            {[
-              'The 5 Layers of Business Leverage',
-              'Decision Latency Model',
-              'Human + AI Operating System',
-              'Automation vs Hiring Economics Model'
-            ].map((framework, i) => (
-              <div key={i} className="p-8 rounded-xl bg-white/5 border border-white/10">
-                <h3 className="text-lg font-medium">{framework}</h3>
-                <p className="mt-3 text-white/60 text-sm">
-                  Structured models explaining modern economic advantage.
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ADVISORY */}
-        <section id="advisory" className="py-32 border-t border-white/10 text-center reveal">
-          <h2 className="text-3xl sm:text-6xl font-semibold tracking-tight">
-            AI Systems Audit & Strategic Advisory
-          </h2>
-
-          <p className="mt-8 text-white/60 max-w-2xl mx-auto">
-            For SMEs and founders seeking structural leverage through AI-driven
-            operating systems and automation architecture.
-          </p>
-
-          <div className="mt-10">
-            <a href="mailto:admin@frameworks.net.in"
-              className="bg-white text-black px-10 py-4 rounded-full font-medium hover:opacity-90 transition">
-              admin@frameworks.net.in
-            </a>
           </div>
         </section>
 
